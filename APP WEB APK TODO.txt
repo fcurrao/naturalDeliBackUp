@@ -1,0 +1,67 @@
+
+************************
+
+1 Haciendo una APP MOBILE JS
+https://www.youtube.com/watch?v=A_k1ECHEaWk
+
+1.5 USANDO: IONIC
+https://ionicframework.com/docs/api/button
+
+2 como ver el emulator vrd
+https://www.youtube.com/watch?v=Qkr3sRJXbls
+
+2.5 como pasarla al celu - GENERAR APK (apk y IOS)
+https://www.youtube.com/watch?v=Wvy8ACbP38I
+o
+https://www.youtube.com/watch?v=bImGm8b9YHE
+o
+https://www.youtube.com/watch?v=zeZ6GQyOBC0
+
+
+************************
+
+SEPTIEMBRE :! 
+Plataforma 5 - Coding Bootcamp
+3 meses 12 horas ( CURSO INTENSIVO)
+$$$$$
+
+FULL
+
+
+************************
+
+PARA APLICACION WEB! 
+EN HTML: 
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+EN JS:
+
+        <ion-header>
+           <ion-tittle> hola a </ion-tittle>
+          
+           <ion-icon slot="end" name="star">  </ion-icon>
+           
+          </ion-header>
+
+          
+          <ion-icon slot="end" name="star"> a</ion-icon>
+           <ion-icon slot="start" name="star"> a </ion-icon>
+          
+          
+          
+          
+<ion-button>
+  <ion-icon slot="start" name="star"> a</ion-icon>
+  Left Icon
+</ion-button>
+<ion-icon slot="end" name="star"> a</ion-icon>
+
+
+<ion-button color="dark">Dark</ion-button>
+
+<ion-icon slot="end" name="star"> a </ion-icon>
+<ion-icon slot="start" name="star"> a </ion-icon>
+
+<

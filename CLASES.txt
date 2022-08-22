@@ -1,0 +1,1797 @@
+https://stackblitz.com/
+
+REPOSITORIO EJERCICIO PROFE:
+
+https://github.com/cortiz2894/test-ecommerce-34685
+
+
+- COMO PONERLO EN PAGES DE GITHUB, (ya que es REACT , dinamico)
+
+- hooks :
+https://es.reactjs.org/docs/hooks-reference.html#usereducer
+
+- BOOTSRAP para REACT: 
+
+https://react-bootstrap.github.io/components/spinners/
+
+otro parecido 
+
+- materialize !:
+https://materializecss.com/icons.html
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+**********************************************************
+***************************************
+CLASE 1 | repaso
+***************************************
+**********************************************************
+
+* var es en todo el documento
+
+* let es solo en un contexto nada mas, funcion por ejemplo.
+
+* const no puede cambiar
+
+* funciones flechas: ALGO = () => {}
+ 
+* ...array
+ 
+
+
+ tipo bootstraps:
+
+SWIPERSJS.com 
+
+**********************************************************
+***************************************
+CLASE 2 | primeros usos REACT 
+***************************************
+**********************************************************
+
+* CREATE-REACT-APP ,  siempre asi!
+
+* FIBER! virtual dom. 
+(diffing y dsp muestra el dom con el dif(evento virtual dom))
+
+* (dentro de la carpeta ,  y en la terminal) npx create-react-app NOMBRE-DE-LA-APP
+cd NOMBRE-DE-LA-APP (para entrar)
+npm start
+local hosto 3000
+
+* readme.md : lo que se muestra en Github presentacion
+documentar y explicar, describir.
+
+* Gitignore : Las Carpetas que ignora GIT cuando sube
+
+* package.json : 
+Depedencias (librerias) que se instalaron
+Scripts: comandos , acciones, etc 
+eslint: herramientas de codigo (tipo usar comillas o simples, o espaciado, etc)
+
+* package-lock.json: Mantiene las versiones de las dependencias
+
+* node_modules: Todas las dependencias creadas por default (modulos, dependencias, librerias)
+
+* public: INDEX.HTML (id=root)( y carpeta con archivos otro.)
+
+* src:  TODO (todo, js, react , img, otros, svg, logos, etc..)
+
+* APP.js = PADRE
+
+* INDEX.JS = agarra el id=root , renderize el APP.js!
+(osea une el index.html con el app.js)
+
+
+* MUI  (mui.com) (como bootstrap) (nueva librerira, se agrega en package.json)
+npm install @mui/material @emotion/react @emotion/styled
+
+
+* swiperjs (carruselles, banner) (nueva libreria)
+npm install @mui/
+npm remove  o unistall
+
+* 
+
+* GITHUB CON VISUAL CODE :!
+
+* GIT HUB ( Usar Github Desktop) o :
+1 crear un repository en "github.com"
+2 poner en consola (cd carpeta del archivo) y poner "git init"
+3 luego poner "git remote add origin https://github.com/fcurrao/NombreRespositorio.git 
+4 y luego en la parte de git del Visual, manejo todo
+
+5 Ahora hago (Guarda,Almacena,Confirma,Sincroniza)(GACS)
+6 cambios: Control+S (se guarda) 
+7 Luego se almacena "cambios/changes" , "Almacenando todos los cambios"
+8 Confirmar en "control de codigo fuente" con el tilde. SE CREA UN "COMMIT"
+
+PASO OJO (TENER CUIDADO - NO HAY RETORNO! ) (solo volver y ver que se hizo y borrarlo manualmente) !!
+
+9 "Sincronizar cambios". SE CREA UN PUSH  O "Push" en commit
+10 Listo! actualizado
+
+PASO BORRAR COMMIT ?
+11 Si no se hizo el "paso 9" >> "Sincronizar cambios" , se puede "undo commit" (en commits)
+12 Y se vuelve atras 
+13 Listo! Vuelto atras.
+
+
+ 
+**********************************************************
+***************************************
+CLASE 3 | JSX | WEBPACK
+***************************************
+**********************************************************
+
+function App() {
+  // const styleApp = { padding: '10px 20px', marginTop : 10}
+  return (
+    //JSX
+    <>
+   
+
+ 
+      <NavBar />
+     
+
+        <ItemListContainer className="cotenedores" greeting="Productos en oferta"/>
+        <ItemListContainer className="cotenedores" greeting="Productos de temporada"/>
+        <ItemListContainer className="cotenedores" greeting="Productos mas comprados"/>
+   
+
+      {/* <Modal title="MODAL DE REGISTRO">
+        <form>
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+          <button>enviar</button>
+        </form>
+      </Modal> */}
+
+ 
+
+
+
+
+    </>
+  );
+}
+
+export default App;
+
+
+
+* DESTRUCTURAR EN OBJETOS Y METODOS
+
+const produt ={
+    tittle: 'remera',
+    price: '50';
+}
+const {tittle, price} = product
+
+console.log("nombre:" + title)
+No hace falta ponerle product.title
+con el title basta, porque arriba destructure
+y le dije que cada vez que use la constante
+tittle y price   las busque de el tittle y price
+de product
+
+
+* DESTRUCTURAR "TERNARIO"
+IF (true y false)
+
+if(product.tittle){
+    console.log("tiene titulo");
+} else{
+    console.log(" NO tiene titulo");
+}
+
+TERNARIO == (es para true y false)
+console.log(product.tittle ? "tiene titulo" : "NO tiene titulo");
+
+
+* POLYFILLS (RETROCOMPATIBILIDAD)
+-parche para que funcione en todos los navegadores.
+
+* WEBPACK: 
+es un modulo (esta en moduls) , transforma los elementos
+en elementos que pueda leer el navegador 
+
+
+
+* JSX Y TRASPLANTIX
+
+
+- SE USA CLASSNAME, no CLASS
+- camelCase se usa 
+
+-ejemplo =>
+var nombre = "fede";
+
+  <p>
+         HOLA MUNDO, yo soy {nombre? nombre : "NO  TENGO NOMBRE"}
+        </p>
+
+
+
+-ejemplo =>
+  <div className="App" style={{padding:10%; marginTop: 10px;}}>
+
+
+
+-ejemplo =>
+    const styleApp={{padding:10%; marginTop: 10px;}}
+
+  <div className="App" style={styleApp}>
+
+
+
+
+* funciones dentro del <>
+<button onClieck={funcion}> Click </button>
+
+
+*asses (dentro de public) guarda fotos y otras cosas
+
+* components (dentro de src (surce)) guarda los componentes
+
+* exportado el componetns
+ <NavBar /> en APPS
+fragment <> en cada componente
+
+* se crea cada fragmentos (componentes) (cada js), y va uno dentro ode otro.
+
+ 
+**********************************************************
+***************************************
+CLASE 4 | COMPONENTES | PROPS | HOOK.
+***************************************
+**********************************************************
+
+* MAQUETACION FLEXBOX
+
+* se necesita un fragments que englobe todo
+* se crea cada fragmentos (componentes) (cada js), y va uno dentro ode otro.
+
+* Diseños modular (cada pieza aislada y luego se une en la pagina)
+
+* componentes basados en clases y componentes basados en funciones
+
+* componentes HOOK (son metodos con FUNCIONES ) => HOOK !.
+
+* pueden recibir props y usan JSX
+
+* props , pasa informacion de padre a hijo
+    <button onClick={funcionComprarMP}>Comprar</button>
+
+* En  un ECOMERCE , se pasaria un JSON o un array de productos, no se cargaria 1 por 1.
+
+* CLAVES DE CSS : before ?? ANTES de abrir o algo asi..
+
+* pasar como {children} y en el uso poner entre <children> JSX </children>
+
+
+
+
+
+* CSS : 
+.countProd button {
+padding: 20px;
+font-size: 27px;
+}
+
+.countProd p {
+font-size: 22px;
+}
+
+.countProd {
+  display flex;
+  width:100%;
+  justify-content: center;
+}
+
+
+
+**********************************************************
+***************************************
+CLASE 5 | COMPONENTES | PROPS, DOM SYNC, EVENTOS , ESTADOS (hook) , CICLOS.
+***************************************
+**********************************************************
+
+* HOOK:
+usestate
+set
+useref
+
+setname
+
+muchos hook
+https://es.reactjs.org/docs/hooks-reference.html#usereducer
+
+
+
+*************
+REACT !! RENDERIZA CON CAMBIO DE PROPS O CAMBIO DE ESTADOS
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-tarea-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+import * as React from 'react';
+import {useState} from 'react'
+import './style.css';
+
+export default function App() {
+
+  
+const [fechaTocada, setfechaTocada] = useState(0)
+const [counter, setCounter] = useState(0) 
+
+const clickA = () => {
+    if (stock = true){
+        console.log("fecha", new Date())
+        setCounter(counter + 1)
+        setfechaTocada(new Date().tolocaleString());
+}}
+
+  return (
+      <div>
+<button onClick={clickA}>Contando</button>
+<p>clicks: {counter} + Ultimo click: {fechaTocada}</p>
+</div>
+
+  );
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+* ESTADOS (estado de ciclo de vida de cada compo)
+- montaje
+- actualizacion (se puede actualizar las veces que se quiera, hasta que se desmonte)
+- desmontaje
+(ejemplo el estado de las cards, se montan, se actualiza cuando cambio el numero  y se desmonta cuando aparece otra cosa o cambio de page)
+
+
+* COMPONENTES FUNCIONALES (HOOK)
+useEffect (fn,filter)
+- trae la informacion de los productos!!!!!
+
+con useEffect: 
+- montaje
+- actualizacion (se puede actualizar las veces que se quiera, hasta que se desmonte)
+- desmontaje
+
+// aca en useEffect  se usa en login en usuario (montaje)
+// aca en useEffect se llama a la api y listo  (montaje)
+        // fetch().then(
+            // setProduct())
+    // para agregar un producto dsp hacer una actualizacion
+
+    useEffect(()=>{
+        console.log("ejecuto en fase de actualizacion")
+         // fetch().then(
+            // setProduct())
+    },[])
+
+si pongo el [] vacio es solo en montaje
+si no lo pongo es en actualizacion
+
+
+    // aca en useEffect se llama a la api y listo 
+        // fetch().then(
+            // setProduct())
+    // para agregar un producto dsp hacer una actualizacion
+
+    useEffect(()=>{
+        console.log("ejecuto en fase de montage")
+         // fetch().then(
+            // setProduct())
+    }, [])
+
+
+-----------
+
+
+
+//  // aca en useEffect se llama a la api y listo 
+//         // fetch().then(
+//             // setProduct())
+//     // para agregar un producto dsp hacer una actualizacion
+
+//     useEffect(()=>{
+//         console.log("ejecuto en fase de actualizacion")
+//          // fetch().then(
+//             // setProduct())
+//     },[counter, otro])
+// // se ejecuta cada vez que cambie el estado COUNTER
+
+
+
+
+* desmontaje
+ useEffect(()=>{
+
+return () =>{
+  // aca va la parte del desmontaje
+}
+  },[])
+
+
+
+
+
+* change
+
+    useEffect(()=>{
+        console.log("ejecuto en fase de actualizacion")
+         // fetch().then(
+            // setProduct())
+    },[counter])
+// se ejecuta cada vez que cambie el estado COUNTER
+
+
+* los event listener , hay que desmontarlas
+
+
+
+
+**********************************************************
+***************************************
+CLASE 6 | promesas | asincronica | map
+***************************************
+**********************************************************
+
+
+* PROMISE: 
+pending
+fullfiled
+rejected
+
+
+* Sincronia, espera el resultado y ejecuta
+
+const task = new Promise((resolve,reject) => {
+  // tarea
+  resolve(true)
+
+});
+
+task.then (result => {
+  console.log(result)
+})
+
+
+
+* LAS PROMESAS SE RESUELVEN CON UN 
+then  =para trabajarlas (cuando va bien)
+catch =para agarrar el error (cuando falla)
+finally =cuando termina (siempre que termina)
+
+
+* ejemplo:
+   
+    const logPromise = new Promise((resolve, reject) => {
+        if (data ===true){
+
+        resolve("La promesa se cumplio correctamente")
+    } else {
+        reject("error")
+    }
+    })
+
+    setSpinner(true)
+
+    logPromise
+    .then ((data) => {
+        console.log(data)
+    })
+    .catch((error)=>{
+        console.log("la llamada fallo")
+    })
+    .finally (()=>{
+        setSpinner(false)
+    })
+
+
+or
+
+ const logPromise = new Promise((resolve, reject) => {
+        if (data ===true){
+
+        resolve("La promesa se cumplio correctamente")
+    } else {
+        reject("error")
+    }
+    })
+
+    setSpinner(true)
+
+    logPromise
+    .then ((res) => {
+      console.log ('Resolved: ' + res)
+    }, err => {
+      console.log ('Rejected: ' + err)
+    })
+    .finally (()=>{
+    console.log ('Finalizado');
+    })
+
+
+* asincronica=
+
+
+
+ const logPromise = () => new Promise((resolve, reject) => {
+  resolve("resuelta")
+      })  
+const getLog = async()=> {
+  try {
+    const responseLog = await logPromise()
+    console.log("funciono!! : " + responseLog)
+  }
+  catch(error){
+    console.log(error)
+
+  }
+}
+
+
+*************   funcion async ?? await
+
+
+La finalidad de las funciones async / await
+ es simplificar el comportamiento del uso
+  síncrono de promesas y realizar algún 
+  comportamiento específico en un grupo de Promises .
+
+--- ejemplo::
+
+funcion async NOMBRE(){
+  const ALGO = await EJECUTAoTRAfUNCION()
+  // osea la funcion asyncronica NOMBRE se ejecuta cuando await ( ESPERA) que se haga primero la EJECUTAoTRAfUNCION
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-tarea-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+import * as React from 'react';
+import './style.css';
+
+export default function App() {
+  const arrayP = [
+    { id: 'remera1', name: 'remera ', description: 'remera', stock: '14' },
+    { id: 'boxer', name: 'box ', description: 'bx', stock: '22' },
+  ];
+
+  const logPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(arrayP);
+    }, 3000);
+  });
+
+  logPromise
+    .then((data) => {
+      // console.log('El array es: ' + data);
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log('la llamada fallo: ' + error);
+    })
+    .finally(() => {
+      console.log('final');
+    });
+
+  return (
+    <div>
+      <h1>PROMISES</h1>
+      <p>Start editing to see some magic happen :)</p>
+    </div>
+  );
+}
+
+
+
+
+* MAP  (solo con ARRAY)
+ nos permite generar un array tomando de baso otro array
+ usando una funcion transformadora
+
+el metodo KEY
+
+ ejemplo: crea un array con los nombre de los usuarios.
+
+ const user = [
+  {
+    nombre: fede, edad:32,curso:react
+  }
+  {
+nombre: pedro, edad : 21, curso: js
+  }
+ ]
+
+console.log(user.map(user => user.nombre))
+// ["fede","pedro"]
+console.log(user.map(user => user.nombre)).(','))
+// ["fede,pedro"]
+
+
+
+
+* utiliza el Key.
+
+
+***************
+ - se utiliza products.mock
+ y despues el back end, reemplaza esa llamada de la 
+ promesa que utiliza el products.mock por la parte back end.
+ ***************
+
+
+    fetch('urslbackend',{})
+    .then ((data) => {
+        console.log("Productos: " + data)
+        setlistProducts(res)
+    })
+    .catch((error)=>{
+        console.log("la llamada fallo" + error)
+    })
+    .finally (()=>{
+        console.log("finally")
+    })
+
+
+
+
+
+**********************************************************
+***************************************
+CLASE 7 | (6) / Consumiendo APIs ( Desafio / Tarea: Detalle de Producto)
+***************************************
+**********************************************************
+
+
+* API= Aplicacion de servicio de Datos
+* API: parte para el back end.
+* los front end, tienen que unir con back end.
+
+* Cliente (consume) - Servidor (proveedor)
+* Fetch y get.
+
+
+(( pagina para ejemplos: 
+jsonplaceholder.typicode
+))
+
+--------------------------------------------
+POSTMAN
+--------------------------------------------
+* Aplicacion para probar los Apis y POST.
+
+--------------------------------------------
+PUSH NOTIFICATION
+--------------------------------------------
+
+Subscribirse a cuando haya novedades!
+el servidor inicia , el cliente se suscribe
+y desde el server te manda notificacioon al cliente
+(Whatsapp web , notificacion)
+
+
+
+--------------------------------------------
+POLLING
+--------------------------------------------
+
+el cliente todo el dia esta preguntando y actualizando
+
+
+-------------------------------------------
+--------------------------------------------
+REQUEST FOR HTTP/S
+--------------------------------------------
+Consultar al servidor , estableciendo un protocolo de transferencia,
+definido por :
+
+
+url
+verbo(get,post,put,delete + )
+parametro (via query o url)
+headers
+body ( contenido de un POST)
+
+
+(el body es lo que le enviamos a la API, al backend)
+
+-
+
+get: traer los productos de la api
+post: crear informacion y se lo envio a la api
+delete: quiero eliminar
+
+put: modificar, crearo actualizar
+patch: quiero alterar parcialmente
+
+-
+
+--------------------------------------------
+QUERY PARAMS
+--------------------------------------------
+
+* Parametros separados por querys
+
+
+* query = q separadas por &
+* se inicia con ?
+* es la ?Q=busquedaa en el google
+* www.e-comerce.com.ar/search?q=remeras&price=500&size=L
+
+
+
+--------------------------------------------
+URL PARAMS /segmente
+--------------------------------------------
+
+* Parametros separdos por barra , por url
+
+* www.reverpass.com/productos/gorras-de-lana
+
+
+
+--------------------------------------------
+RESTFUL / recursos
+--------------------------------------------
+
+* SE UTILIZA : AJAX
+
+POST /create-user HTTP/1.1
+
+*Header 
+Host: localhost:3000
+conenection: keep-alive
+Content-type: application/json
+................
+
+* body { "name": "john", "age": 35 }
+
+* en un formulario log in, se envia un post en donde el body
+es ´{usuario: fede , contraseña: 1234}
+
+
+* header le podes poner que esta logeado o no.
+- agregan info extra, login, tokens, cookies, formato de texto, otros
+- En consola del chrome, se puede ver la info de Headers.
+
+
+
+--------------------------------------------
+REQUESTS EN EL BROWSER / navegador
+FETCH API
+--------------------------------------------
+
+
+*Utilizar fetch api. -- es una promise  y tiene dos then.
+
+* el primero asigna que es json, y luego el segundo te deja
+usarlo como vos quieras.
+
+
+-fetch(url)
+.then(response{
+return response.json();
+}
+.then function (user){
+console.log(user)
+}
+
+
+(( pagina para ejemplos: 
+jsonplaceholder.typicode
+))
+
+
+fetch('http://jsonplaceholder.typicode.com/user')
+.then((response){
+return response.json()
+})
+.then((data){
+console.log("Usuarios :", data)
+})
+
+
+
+
+
+* CON POST:
+
+APP:
+fetch(('http://jsonplaceholder.typicode.com/user'){
+method: 'POST',
+body: {
+email: "fede",
+password: "1234"
+})
+.then((response){
+return response.json()
+})
+.then((data){
+console.log("Usuarios :", data)
+})
+
+
+-------------------------------------
+-------------------------------------
+-------------------------------------
+-------------------------------------
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+*&&&&&* EJERCICIO *&&&&&*
+
+* Utilizar un Mount effect, y fetch api (api de ML)
+muestre los primeros 10 nombres (Mapearlos)
+
+--
+api de mercadolibre.
+ML
+https://api.mercadolibre.com/sites/MLA/search
+--
+(api pokemon :  https://pokeapi.co/ )
+--
+
+
+
+&&& ENTENDER ESTE EJERCICIO   V V V &&&
+
+
+http://pokeapi.co/api/v2/pokemon
+results: objeto con pokemones 
+
+
+import React, {useState,useEffect} from 'react';
+
+//
+const[listaPokemon, setListPokemon]=useState([])
+
+
+// ((Se hace en el ciclo de vida en el montaje))
+useEffect(()=>{
+
+fetch('http://pokeapi.co/api/v2/pokemon?offset=10&limit=10')
+.then((response){
+return response.json()
+})
+.then((data){
+console.log( "Los 10 pokemones son :", data.results)
+// le asigno a ListaPokemon , lo que traje de la api: (en la api es 'results')
+setListaPokemon (data.results)
+})
+},[]);
+
+
+return(
+<>
+<h1>Pokemones :  <h1/>
+// hago un mapeo del array de la lista y por cada uno le muestro el nombre
+{listaPokemon.map((pokemones, i)) => {
+return <p key={i}> pokemones.name</p>}
+}
+
+
+
+</>
+)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+EJEMPLO DE POST:  ((Log In) 
+
+APP:
+
+// uso un ONSUBMIT o  unUSEEFFECT , para lanzar el POST.
+const onSubmit =() => {
+useEffect(() => {
+
+
+fetch(('http://challenge-react.alkemy.org',
+{
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+'Acces-Control-Allow-Origin': '*'
+}
+body: JSON.stringify({
+"email": mail,
+"password": password
+})
+})
+.then((response){
+return response.json()
+})
+.then((data){
+console.log("Usuario Cargado :", data)
+})
+
+
+
+
+return(
+<>
+<button onClick=onSubmit() > ENVIAR POST </button>
+
+
+</>
+)
+
+////////////
+// en el body  puede ir LOGIN o tambien Nuevos productos.
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+OTRO EJEMPLO:
+
+MERCADO PAGO. API DE PAGO!
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+
+-------------------------------------
+CORS 
+-------------------------------------
+
+* No me permite el acceso con este dominio a la api
+entonces tengo que admitir cors.
+
+* En le header va los preflight.:
+
+(todos)
+Acces-Control-Allow-Origin:*
+(algunas)
+Acces-Control-Allow-Origin:https://localhosto:3000
+
+
+
+
+//////////////////////////////////////////////
+*///* TAREA *///*
+
+-- Detalle del producto -
+Crear hook de 1 producto:
+
+ItemDetailContainer en la premisa ItemListContainer
+ItemDetail
+
+-----
+comentar el itemlistcontainer
+
+
+//////////////
+tipo bootstraps:
+
+SWIPERSJS.com 
+
+//////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+<
+
+MODIFICADO POR PROFE:
+
+
+fetch('http://jsonplaceholder.typicode.com/user'){
+.then((response){
+return response.json()
+})
+.then((data){
+console.log("Usuarios :", data)
+})
+
+
+
+
+
+APP:
+fetch('http://jsonplaceholder.typicode.com/user'){
+method: 'POST',
+body: {
+email: "fede",
+password: "1234"
+})
+.then((response){
+return response.json()
+})
+.then((data){
+console.log("Usuarios :", data)
+})
+
+
+
+
+
+
+**********************************************************
+***************************************
+CLASE 8 | ROUTING y NAVEGACION  ()
+***************************************
+**********************************************************
+
+
+
+* ORGANIZACION =
+
+-HOME
+-(BUSQUEDA DE USUARIO)>MIRANDO
+-DETALLE
+-CONFIRMACION
+-FIN (COMPRA O CIERRA)
+
+
+-------------------------------------
+* ROUTING ::
+-------------------------------------
+
+para las  /    ( barras)
+
+INSTALAR NPM INSTALL react-router-dom
+
+-------------------------------------
+* REACT ROUTER ::
+-------------------------------------
+
+<BrowserRouter>
+toda la JSX
+</BrowserRouter>
+
+para que toda nuestra APP se maneje con routers
+
+-----------------
+
+<Routers>
+<Router>
+
+</Routers>
+
+-----------------
+
+
+<Link>
+
+----------
+
+APRENDIMOS TODO ESTO.
+
+import { Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************
+***************************************
+CLASE 9 |  EVENTOS 
+***************************************
+**********************************************************
+
+ * DOM EVENT
+
+ * EVENT listener
+
+ * Eventos
+
+-------------------------------------
+
+
+-------------------------------------
+DOM EVENT
+-------------------------------------
+
+click
+input
+focus
+whell
+keyboard
+
+* SON LOS MAS USADOS !!!!!!!!!!!
+
+
+-------------------------------------
+ON 
+-------------------------------------
+
+* PAGINA CON TODOS:
+
+https://www.gruponw.com/noticias-de-colombia-y-el-mundo/nwarticle/171/13/DOM:+Modelo+basico+de+eventos+-+onblur+-++onchange+-+onclick+ondblclick++onfocus++onkeydown+onkeypre
+
+
+onClick
+onChange
+ondblclick
+onKeyDown
+onfocus
+onmousemove
+onmouseover
+
+
+
+-------------------------------------
+EVENT listener (window)
+-------------------------------------
+
+
+window.addEventListener('resize', onResize);
+
+(nombre de evento , funcion a realizar)
+
+* Hay que return (para desmontar) porque queda corriendo
+
+return()=>{
+  console.log('on dismount')
+  window.removeEventListener('resize', onResize)
+}
+
+* se usa en el effect y se poner la remove en el return del efecto.
+
+
+
+-------------------------------------
+REACT EVENT 
+-------------------------------------
+
+* synthetic events:
+sirve para estandarizar eventos entre Browser
+se destruyen al terminar la utilizacion.
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+EJERCICIO 
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+import * as React from 'react';
+import { useState } from 'react';
+import './style.css';
+
+export default function App() {
+  const [inputValue, setInputValue] = useState('');
+  const handleClick = (e) => {
+    console.log('clickkk', inputValue);
+  };
+
+  const handleChange = (e) => {
+    // Guardo el valor
+    console.log('cambio', e.target.value);
+    setInputValue(e.target.value);
+    // forma de ver
+    // console.log('evento sintetico', e);
+    // console.log('evento nativo', e.nativeEvent);
+  };
+  return (
+    <div>
+      <button onClick={handleClick}> Click </button>
+      <input
+        onChange={handleChange}
+        type="text"
+        placeholder="Ingrese un texto"
+      />
+    </div>
+  );
+}
+
+
+// CONSOLA MUESTRA:
+
+// cambio f
+// cambio fe
+// cambio fed
+// cambio fede
+// clickkk fede
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+-------------------------------------
+* stopPropagation()
+ 
+ stop propagation
+sirve para parar la propagacion de los eventos del padre al hijo
+EJ: toda la card va al link de detalle, pero el boton dentro
+de la card (añadir a carro) / deberia parar la propagacion y ir 
+al link de añadir al carro.
+
+
+-------------------------------------
+* preventDefault()
+ 
+preventDefault
+
+
+-------------------------------------
+
+
+     e.preventDefault()
+        // e.stopPropagation()
+
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+EJERCICIO
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+QUE NO SE PUEDA ESCRIBIR LETRAS VOCALES ::
+
+
+import * as React from 'react';
+import { useState } from 'react';
+import './style.css';
+
+export default function App() {
+  const [inputValue, setInputValue] = useState('');
+  const array = [65, 69, 73, 79, 85];
+  const handleClick = (e) => {
+    console.log('clickkk', inputValue);
+  };
+
+  const handleChange = (e) => {
+    // Guardo el valor
+    console.log('cambio', e.target.value);
+    setInputValue(e.target.value);
+    // forma de ver
+    // console.log('evento sintetico', e);
+    // console.log('evento nativo', e.nativeEvent);
+  };
+
+  const keyfunction = (e) => {
+    if (array.includes(e.keyCode)) {
+      e.preventDefault();
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}> Click </button>
+      <input
+        onChange={handleChange}
+        type="text"
+        placeholder="Ingrese un texto"
+        onKeyDown={keyfunction}
+      />
+    </div>
+  );
+}
+
+// CONSOLA MUESTRA:
+
+// cambio f
+// cambio fe
+// cambio fed
+// cambio fede
+// clickkk fede
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+MAS RESUMIDO, UTILIZANDO UN INDEX! , 
+
+import React from 'react';
+import './style.css';
+
+export default function App() {
+  const handleKeyDown = (e) => {
+    // cada una que entro es letter
+    const letter = e.key;
+    // si esa letra esta entre las vocales, indexOF devuelve 1,
+    // si no esta devuelve -1 ,  y si es diferente a -1 entra a preventDefault, y no se inputea.
+    if ('aeiouAEIOU'.indexOf(letter) != -1) {
+      e.preventDefault();
+    }
+  };
+
+  return (
+    <div>
+      <p>No ingreses vocales!</p>
+      <input onKeyDown={handleKeyDown} />
+    </div>
+  );
+}
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+
+-------------------------------------
+* unidirectional
+
+Reaccion (info y data)
+Se pasan Datos de arriba , hacia abajo
+
+
+Acciones (eventos)
+Se pasa la info de hijos a Padres , gracias a eventos.
+
+
+-------------------------------------
+* Intercambiabilidad
+
+
+
+
+
+e.stopPropagation()
+stop propagation , para el efecto en ese lugar
+
+ 
+
+
+
+
+**********************************************************
+***************************************
+CLASE 9 |  CONTEXTO  (pasa informacion forma GLOBAL)
+***************************************
+**********************************************************
+
+- pasar info a toda la app
+Hay que englobar la APP
+
+- Sirve para mandar info para arriba.
+
+React.createContext
+ThemeContext. Provider
+
+proveedor
+
+
+==================
+
+import { createContext } from "react";
+
+
+const CartContext = CreateContext ()
+
+const CartProvider = ({children}) =>{
+
+    return(
+        <CartContext.Provider>
+            {children} // el resto de la APP
+        </CartContext.Provider>
+
+    )
+}
+
+export default CartProvider
+
+
+********
+usecontext
+CartContext
+CartProvider
+===================
+
+- SE ENGLOBA TODO LO QUE QUIERO QUE LO PUEDA USAR.
+LUEGO SE HACE EL CARTCONTEXT ( O JSCONTEXT) , Y LUEGO DONDE SE QUIERA USAR ( SIEMPRE Y CUANDO ESTUVO ENGLOBADA)
+SE IMPORTA EL USECONTEXT Y JSCONTEXT ( O CARTCONTEXT) Y LUEGO SE DESCONTRACTURA Y ASI SE USA LOS ELEMENTOS ..
+
+
+************
+PARA LA TAREA USAR DE EJEMPLO:
+
+EJEMPLO 1
+https://stackblitz.com/edit/react-6ymjfz?file=src%2Fcontext%2FCartContext.js
+
+EJEMPLO 2
+https://github.com/cortiz2894/test-ecommerce-34685/commit/57e5bfb4d4779642f12f65446ecae6da894ef137
+
+
+
+
+
+
+**********************************************************
+***************************************
+CLASE 10 |  REENDERIZADO CONDICIONAL. || REENDERING .. RENDER OPTIMIZACION.
+***************************************
+**********************************************************
+
+* REENDERIZADO ::
+
+- flujo de reenderizado ( contagia el recargado a sus hijos)
+- se puede evitar el contagio de recaragado.
+
+
+-------------------------------------
+
+* REENDERIZADO CONDICIOONAL:  3 estilos
+
+
+----------
+* ESTILO TERNARIO (if y else)
+aglo ? <h1> true </h1> :  <h1> false </h1>
+
+- sirve para aparecer y desaparacer el dom.
+
+
+----------
+* ESTILO CON RETURN
+EL RETURN CORTA EL IF.
+
+funcion condicional () => {
+if (condicion){
+  return (console.log ("se cumple"))
+}
+return   (console.log ("NO se cumple"))
+}
+
+--------------------
+* ESTILO INLINE CON FRAGMENT: (sirve sin else)
+{condicion &&   <h1> true </h1>  }
+{!condicion &&    <h1> false </h1> }
+
+
+----------------------------------------
+
+eventos siempre callback (llamada denuevo)
+
+
+-------------------------------------------
+--------------------
+* MOSTRAR UNA CLASE CUANDO EL "MODAL" ESTE ACTIVO
+
+overlay-black
+ternario para agregar o sacar clases.
+
+* ESTILOS  O  CLASE (agregar o quitar) ::
+<h2 style={{ color: !condicion ? 'red' : 'green'}}
+<h2 className={{ condicion? nombredeClase : otroNombredeClase }}
+
+-------------------------------------------
+------------------------------------------
+
+- pongo propiedaes juntas=
+
+props {
+data: dataproduct,
+stock: stock,
+cantidad: qty
+}
+
+<input {...props} />
+
+
+-------------------------------------------
+------------------------------------------
+
+* RENDER OPTIMIZACION
+
+
+* METODO MEMO (memoizing):
+Se usa SOLO si es muy pesado el prox componente (tipo una API) y es al pedo 
+
+export default memo(componenteAMemoizing)
+
+
+* 
+
+
+
+
+
+**********************************************************
+***************************************
+CLASE 11 |  Utilizando Firebase 
+***************************************
+**********************************************************
+
+
+- Firebase (en vez de backend) (asi no nos conectamos a un backend)
+
+
+SPA(app) corre en el BROWSER
+consume API provista por el BACKEND
+llega por BASE DE DATOS (sql o nosql)
+
+
+SPA(app) corre en el BROWSER
+se conecta con el firebase service (FIRESTORE)
+
+
+
+* firebase ( muchas funciones..)
+
+
+* FIRESTORE ! (base de datos)
+
+Strapi (control de la base de datos, panel) - para el cliente.
+
+------------
+
+npm install firebase
+
+
+
+--- 
+config: crear un JS :
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAFHV1U2LK-JQ7vvrpuSM7TCm5kS5MJFFw",
+  authDomain: "natural-deli.firebaseapp.com",
+  projectId: "natural-deli",
+  storageBucket: "natural-deli.appspot.com",
+  messagingSenderId: "1014913725139",
+  appId: "1:1014913725139:web:973733de5a21aa3a511a26",
+  measurementId: "G-Q6T652GNTH"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
+export default db
+
+----------------------------------------
+
+Entonces con importar db ya podemos usar el firebase
+
+
+------------------
+
+
+
+
+****************************
+firestore . controller  
+*******************************
+
+import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, setDoc, where } from "firebase/firestore/lite";
+import db  from '../db/config';
+
+// CREATE
+//Esta función recibe el objeto que quiero agregar como nuevo documento de mi colección y como segundo parámetro el nombre de mi colección a la que agregaré el nuevo documento.
+export const createItem = async(obj, nameCollection) => {
+    const colRef = collection(db, nameCollection);
+    const data = await addDoc(colRef, obj);
+    return data.id;
+}
+
+
+
+// WHERE
+
+
+// QUERY
+     filtrar por categoria: 
+   pero categoria === "nombre de la categoria"
+  WHERE (diapositiva 59 - clase 11)
+
+  const categorys = query(collection(db, "products"), where(" product.category, "==", "Almacen")
+
+
+// limit(10)
+
+
+// UPDATE
+export const updateItem = async (id, obj, nameCollection) => {
+    const colRef = collection(db, nameCollection);
+    await updateDoc(doc(colRef, id), obj)
+}
+
+// READ
+//Esta función recibe por parámetro el nombre de la colección que quiero traer desde firestore y devuelve un array con mis productos incluyendo el id de cada documento.
+export const getItems= async (nameCollection)  => {
+    const colRef = collection(db, nameCollection);
+    const result = await getDocs(query(colRef));
+    return getArrayFromCollection(result);
+}
+
+// READ WITH WHERE
+// Esta función recibe por parámetro una palabra clave "key" como el nombre de la propiedad del documento, "condition" como la condición lógica (==, <=...etc.), "value" como el valor de la condición. Tener en cuenta el tipo de dato, que debe coincidir con el que tenemos en nuestro firebase
+//*ejemplo: where('category', '==' , 'panaderia')
+export const getItemsByCondition = async (key, condition, value,nameCollection) => {
+    const colRef = collection(db, nameCollection);
+    const result = await getDocs(query(colRef, where(key, condition, value)));
+    return getArrayFromCollection(result);
+}
+
+export const getItemById = async (id, nameCollection) => {
+    const colRef = collection(db, nameCollection);
+    const result = await getDoc(doc(colRef, id));
+    return {...result.data(), id: result.id};
+}
+
+// DELETE
+//Esta función elimina un documento de firebase, se usaría por ejemplo para anular una escritura en firebase como la de una orden de compra. Por cierto, las eliminaciones en firebase también son costosas $$$ ya que están restringidas.
+export const deleteItem = async (id, nameCollection) => {
+    const colRef = collection(db, nameCollection);
+    await deleteDoc(doc(colRef, id));
+}
+
+
+/* -------------------------- Funciones de soporte -------------------------- */
+
+//Crear un array de los items que obtengo a través de firebase y agregarles la propiedad id
+const getArrayFromCollection = (collection) => {
+    return collection.docs.map(doc => {
+        return { ...doc.data(), id: doc.id };
+    });
+}
+
+
+//SUBIR TODOS NUESTROS PRODUCTOS A FIREBASE:
+export const uploadCollectionItems = async (arrayProducts, nameCollection) => {
+    arrayProducts.forEach( async (product) => {
+        await createItem(product, nameCollection);
+    })
+} 
+
+
+********************************************
+
+
+
+
+
+
+
+
+
+
+<
+
+
+**********************************************************
+***************************************
+CLASE 12 |  FIREBASE 2 
+***************************************
+**********************************************************
+
+REPASAR TODO FIREBASE 
+COMO TRAER LA BASE DE DATO ??
+COMO ACTUALIZAR Y BORRAR DATOS ??
+
+
+
+formulario: para firebase 
+
+ const handleChange = (e) => {
+    console.log("valor ingresado por el usuario, TARGET : ", e.target)
+    setFormdata({[e.target.name] : e.target.value})
+ }
+
+
+PUSHEO DATOS A FIREBASE
+
+const pushDatatoFireabase = async (newOrder) => {
+ const collectionOrder = collection(db, 'OrdenDeCompra')
+  const orderDoc = await addDoc(collectionOrder, newOrder)
+  setSucces(orderDoc.id)
+  console.log('ORDER GENERADA ', orderDoc)
+  clear()
+}
+
+
+
+
+
+
+
+
+
+
+
+<
+
+
+
+<
+**********************************************************
+***************************************
+CLASE 13 | realizando un CRUD..
+***************************************
+**********************************************************
+
+
+
+
+
+
+
+<
+
+**********************************************************
+***************************************
+CLASE 14 |  WORKSHOP ( taller )
+***************************************
+**********************************************************
+
+
+
+
+
+
+
+
+
+
+<
+**********************************************************
+***************************************
+CLASE 15 | 
+***************************************
+**********************************************************
+
+
+
+
+
+
+
+
+
+
+
+<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*************************************** 
+fin!  | 
+*************************************** 
+
+
+
+<
